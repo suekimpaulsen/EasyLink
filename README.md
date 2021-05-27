@@ -27,7 +27,7 @@ Steps for MVP:
 Issues List:
 Main
 1.Html
- 2.Css 
+2.Css 
 3. Js
 4.Feature/location
 5.feature/food-drink
