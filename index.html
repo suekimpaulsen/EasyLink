@@ -15,48 +15,73 @@
 
 <body>
     <Header class="jumbotron">
-        <h1>
-            <a href="/">EasyLink</a>
-        </h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#activities">Activities</a>
-                </li>
-                <li>
-                    <a href="#reviews">Reviews</a>
-                </li>
-                <li>
-                    <a href="#contact-us">Contact Us</a>
-                </li>
-            </ul>
-        </nav>
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <title>EasyLink</title>
+                <a class="navbar-item" href="#"></a>
+                <img src="assets/Images/Icon.png" width="90" height="90">
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                Activities
+                            </a>
+                            <a class="navbar-item">
+                                Reviews
+                            </a>
+                            <a class="navbar-item">
+                                Results
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
     </Header>
 
     <main>
         <!--Hero section/ with questions of "are you ready"-->
-        <section class="hero">
-            <div class="form">
+        <section class="container">
+            <div class="notification is-primary">
+                This container is <strong>centered</strong> on desktop and larger viewports.
+                <figure class="image is-128x128">
+                    <img src="assets/Images/HeroImg.jpeg">
+                  </figure>
+            </div>
+            <div class="hero-body">
+                <p class="subtitle">
+                    Hero subtitle
+                </p>
                 <h3>Ready to Link Up?</h3>
                 <p>Tell Us About You So We Can Plan Your Perfect Day!</p>
-                    <button class=""></button>
-                
+                <button class=""></button> <a href="#about-you">Get Started</a>
+            </div>
             </div>
         </section>
-        <!--Questions about restaurant/Bars types-->
-        <div class="">
-            <div class="">
-                <div class="">
 
-                </div>
-            </div>
-        </div>
-
-        <!--Questions about age group-->
-        <div class="">
+        <!--About you Form-->
+        <div id="About-You">
             <div class="">
                 <div class="">
 
@@ -77,6 +102,33 @@
             </div>
 
         </section>
+
+        <!--Activities-->
+        <div id="Activities">
+            <div class="">
+                <div class="">
+
+                </div>
+            </div>
+        </div>
+
+        <!--Results-->
+        <div id="Results">
+            <div class="">
+                <div class="">
+
+                </div>
+            </div>
+        </div>
+
+        <!--Contact Us-->
+        <div id="Contact Us">
+            <div class="">
+                <div class="">
+
+                </div>
+            </div>
+        </div>
     </main>
 
 
