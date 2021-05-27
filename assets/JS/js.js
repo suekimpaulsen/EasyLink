@@ -10,9 +10,6 @@ fetchApiData = () => {
     .then((response) => {
         console.log(response);
     })
-
 }
-
-
 
 $('#get-started').click(fetchApiData);
