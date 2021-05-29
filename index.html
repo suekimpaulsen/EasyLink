@@ -14,123 +14,142 @@
 </head>
 
 <body>
-    <Header class="jumbotron">
-        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <title>EasyLink</title>
-                <a class="navbar-item" href="#"></a>
-                <img src="assets/Images/Icon.png" width="90" height="90">
-                </a>
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item">
-                        Home
-                    </a>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            More
+    <section class="hero is-medium has-background-image">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                            <img src="assets/Images/Icon.png" alt="Logo">
                         </a>
-
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Activities
-                            </a>
-                            <a class="navbar-item">
-                                Reviews
-                            </a>
-                            <a class="navbar-item">
-                                Results
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item">
-                                Contact Us
-                            </a>
-                        </div>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
                     </div>
-                </div>
-    </Header>
-
-    <main>
-        <!--Hero section/ with questions of "are you ready"-->
-        <section class="hero is-medium has-background-image">
-            <img alt="Fill Murray" class="hero-background is-transparent" src="assets/Images/HeroImg.jpeg" />
-            <div class="hero-body">
-            <div class="container">
-              <p class="title">
-                Large hero
-                <p class="subtitle">
-                    Hero subtitle
-                </p>
-                <h3>Ready to Link Up?</h3>
-                <p>Tell Us About You So We Can Plan Your Perfect Day!</p>
-                <button class=""></button> <a href="#about-you">Get Started</a>
-            </div>
-          </div>
-
-        <!--About you Form-->
-        <div id="About-You">
-            <div class="">
-                <div class="">
-
+                    <div id="navbarBasicExample" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item is-active">
+                                Home
+                            </a>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">
+                                    More
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a class="navbar-item">
+                                        Activities
+                                    </a>
+                                    <a class="navbar-item">
+                                        Reviews
+                                    </a>
+                                    <a class="navbar-item">
+                                        Results
+                                    </a>
+                                    <hr class="navbar-divider">
+                                    <a class="navbar-item">
+                                        Contact Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+            </nav>
+        </div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="box">
+                    <h3>Ready to Link Up?</h3>
+                    <p>Tell Us About You So We Can Plan Your Perfect Day!</p>
+                    <button id="btn">Get Started!</button>
                 </div>
             </div>
         </div>
+        <main>
+            <!--area map for reference-->
+            <section class="section is-medium">
+                <h1 class="title">Map of Nashville</h1>
+                <h2 class="subtitle">
+                    A simple container to divide your page into <strong>sections</strong>, like the one you're currently
+                    reading.
+                </h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206090.64634191518!2d-86.92532859239705!3d36.186836006423874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8864665c3134654b%3A0xa5b810c860cc0e67!2sCountry%20Music%20Hall%20of%20Fame%20and%20Museum!5e0!3m2!1sen!2sus!4v1618411910996!5m2!1sen!2sus"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </section>
 
-        <!--area map for reference-->
-        <section>
-            <div class="">
-                <h3>
-                    <div>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206090.64634191518!2d-86.92532859239705!3d36.186836006423874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8864665c3134654b%3A0xa5b810c860cc0e67!2sCountry%20Music%20Hall%20of%20Fame%20and%20Museum!5e0!3m2!1sen!2sus!4v1618411910996!5m2!1sen!2sus"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-                        </iframe>
-                </h3>
-            </div>
+            <!--About you Form-->
+            <div class="modal" id="myModal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">About you</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="e.g Alex Smith">
+                            </div>
+                        </div>
 
-        </section>
-
-        <!--Activities-->
-        <div id="Activities">
-            <div class="">
-                <div class="">
-
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                            </div>
+                        </div>
+                        <div class="control">
+                            <div class="select">
+                                <select>
+                                    <option>Select dropdown</option>
+                                    <option>With options</option>
+                                </select>
+                            </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-success">Save changes</button>
+                        <button class="button">Cancel</button>
+                    </footer>
                 </div>
             </div>
-        </div>
 
-        <!--Results-->
-        <div id="Results">
-            <div class="">
-                <div class="">
-
+            <!--Activities-->
+            <section class="section is-medium">
+                <h1 class="title">Activities</h1>
+                <h2 class="subtitle">
+                    A simple container to divide your page into <strong>sections</strong>, like the one you're currently
+                    reading.
+                </h2>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!--Contact Us-->
-        <div id="Contact Us">
-            <div class="">
-                <div class="">
+            <!--Results-->
+            <section class="section is-medium">
+                <h1 class="title">Medium section</h1>
+                <h2 class="subtitle">
+                    A simple container to divide your page into <strong>sections</strong>, like the one you're currently
+                    reading.
+                </h2>
+            </section>
 
-                </div>
-            </div>
-        </div>
-    </main>
+            <!--Contact Us-->
+            <section class="section is-medium">
+                <h1 class="title">Medium section</h1>
+                <h2 class="subtitle">
+                    A simple container to divide your page into <strong>sections</strong>, like the one you're currently
+                    reading.
+                </h2>
+            </section>
+        </main>
 
 
-    <script src="./assets/JS/js.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./assets/JS/js.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 <footer>
 
