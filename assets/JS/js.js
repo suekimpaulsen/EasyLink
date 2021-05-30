@@ -13,3 +13,4 @@ fetchApiData = () => {
 }
 
 $('#get-started').click(fetchApiData);
+
