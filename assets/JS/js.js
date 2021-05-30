@@ -15,6 +15,62 @@ fetchApiData = () => {
 $('#get-started').click(fetchApiData);
 
 
+// ACTIVITES
+// after fill out the form and hit save
+// activities page shows up
+// select the options that are given
+
+getModalInputInfo = () => {
+	//store input values into vraiables
+	var name = $('input[type="text"]').val();
+	var email = $('input[type="email"]').val();
+
+	//turn variables into objects
+	var currentInfo = {
+		name: name,
+		email: email
+	}
+
+	saveAboutYou(currentInfo)
+}
+$('#save-changes').click(getModalInputInfo);
+
+saveAboutYou = (currentInfo) => {
+	//create array
+	var aboutYouInfo = [];
+
+	// add form info to leaderboard
+	aboutYouInfo.push(currentInfo);
+
+	//add newest information to local storage
+	localStorage.setItem('about-you', JSON.stringify(aboutYouInfo));
+}
+
+
+
+
+
+
+
+// REVIEWS
+// list out the options that were selected in the activities page
+
+
+// RESULTS
+// shows a map
+// recommend places to go
+
+
+
+// CONTACT US
+
+
+// NAVBAR-BURGER
+// directs to its page when clicked
+
+
+
+
 class BulmaModal {
 	constructor(selector) {
 		this.elem = document.querySelector(selector)
