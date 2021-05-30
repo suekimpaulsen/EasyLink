@@ -12,9 +12,6 @@ fetchApiData = () => {
     })
 }
 
-$('#get-started').click(fetchApiData);
-
-
 // when you click get started button
 // about you modal pops up
 
