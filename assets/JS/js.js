@@ -48,10 +48,6 @@ saveAboutYou = (currentInfo) => {
 
 
 
-
-
-
-
 // REVIEWS
 // list out the options that were selected in the activities page
 
