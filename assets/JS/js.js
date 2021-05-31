@@ -2,7 +2,7 @@ fetchApiData = () => {
     
 	clearScreen();
 	
-	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
+	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geopolygon?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
 
 
     fetch(restaurantApi)
