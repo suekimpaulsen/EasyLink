@@ -17,7 +17,10 @@ fetchApiData = (cuisine) => {
 	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=' + cuisine + '&key=e3fb5dcdf4c00fbb833a184f0893222e';
 
 
-    fetch(restaurantApi)
+	var googleApi = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyBtM_oTP6sMahXfTnWC2GEM4Q8es01OrKQ';
+
+
+    fetch(googleApi)
     .then((response) => {        
         return response.json();       
     })
@@ -25,32 +28,32 @@ fetchApiData = (cuisine) => {
         
 		console.log(response);
 
-		//create container to hold all cards
-		restaurantContainer = document.createElement('div');
-		restaurantContainer.classList = 'practice';
-		$('#results').append(restaurantContainer);
+	// 	//create container to hold all cards
+	// 	restaurantContainer = document.createElement('div');
+	// 	restaurantContainer.classList = 'practice';
+	// 	$('#results').append(restaurantContainer);
 
-		for(i = 0; i < 4; i++) {
-			//create individual restaurant containers
-			createRestaurantEl = document.createElement('div');
-			createRestaurantEl.classList = '';
-			restaurantContainer.append(createRestaurantEl);
+	// 	for(i = 0; i < 4; i++) {
+	// 		//create individual restaurant containers
+	// 		createRestaurantEl = document.createElement('div');
+	// 		createRestaurantEl.classList = '';
+	// 		restaurantContainer.append(createRestaurantEl);
 
-			//create restaurant card name
-			restaurantTitle = document.createElement('h2');
-			restaurantTitle.textContent = response.data[i].restaurant_name;
-			restaurantTitle.classList = '';
-			createRestaurantEl.append(restaurantTitle);
+	// 		//create restaurant card name
+	// 		restaurantTitle = document.createElement('h2');
+	// 		restaurantTitle.textContent = response.data[i].restaurant_name;
+	// 		restaurantTitle.classList = '';
+	// 		createRestaurantEl.append(restaurantTitle);
 
-			//insert restaurant address
-			restaurantAddress = document.createElement('h3');
-			restaurantAddress.textContent = response.data[i].address.formatted;
-			restaurantAddress.classList = '';
-			createRestaurantEl.append(restaurantAddress);
-		}
+	// 		//insert restaurant address
+	// 		restaurantAddress = document.createElement('h3');
+	// 		restaurantAddress.textContent = response.data[i].address.formatted;
+	// 		restaurantAddress.classList = '';
+	// 		createRestaurantEl.append(restaurantAddress);
+	// 	}
     })
 
-	getModalInputInfo();
+	//getModalInputInfo();
 }
 
 clearScreen = () => {
@@ -178,3 +181,4 @@ mdl.addEventListener("modal:close", function() {
 })
 
 $('.card').click(getCuisine);
+$('#activities').click(fetchApiData);
