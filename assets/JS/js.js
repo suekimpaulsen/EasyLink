@@ -1,6 +1,8 @@
 fetchApiData = () => {
     
-    var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&size=15&key=e3fb5dcdf4c00fbb833a184f0893222e'
+	clearScreen();
+	
+	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
 
 
     fetch(restaurantApi)
@@ -8,8 +10,39 @@ fetchApiData = () => {
         return response.json();       
     })
     .then((response) => {
-        console.log(response);
+        
+		console.log(response);
+
+		//create container to hold all cards
+		restaurantContainer = document.createElement('div');
+		restaurantContainer.classList = 'practice';
+		$('#results').append(restaurantContainer);
+
+		for(i = 0; i < 4; i++) {
+			//create individual restaurant containers
+			createRestaurantEl = document.createElement('div');
+			createRestaurantEl.classList = '';
+			restaurantContainer.append(createRestaurantEl);
+
+			//create restaurant card name
+			restaurantTitle = document.createElement('h2');
+			restaurantTitle.textContent = response.data[i].restaurant_name;
+			restaurantTitle.classList = '';
+			createRestaurantEl.append(restaurantTitle);
+
+			//insert restaurant address
+			restaurantAddress = document.createElement('h3');
+			restaurantAddress.textContent = response.data[i].address.formatted;
+			restaurantAddress.classList = '';
+			createRestaurantEl.append(restaurantAddress);
+		}
     })
+
+	getModalInputInfo();
+}
+
+clearScreen = () => {
+	$('.practice').remove();
 }
 
 // when you click get started button
@@ -35,7 +68,7 @@ getModalInputInfo = () => {
 
 	saveAboutYou(currentInfo)
 }
-$('#save-changes').click(getModalInputInfo);
+
 
 saveAboutYou = (currentInfo) => {
 	//create array
@@ -131,3 +164,5 @@ mdl.addEventListener('modal:show', function() {
 mdl.addEventListener("modal:close", function() {
 	console.log("closed")
 })
+
+$('#save-changes').click(fetchApiData);
