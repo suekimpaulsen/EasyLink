@@ -1,8 +1,20 @@
-fetchApiData = () => {
+getCuisine = (e) => {
+	var cuisine = e.currentTarget.childNodes[1].childNodes[1].innerText
+	
+	fetchApiData(cuisine)
+}
+
+
+
+
+
+fetchApiData = (cuisine) => {
     
 	clearScreen();
+
 	
-	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geopolygon?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
+	
+	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=' + cuisine + '&key=e3fb5dcdf4c00fbb833a184f0893222e';
 
 
     fetch(restaurantApi)
@@ -165,4 +177,4 @@ mdl.addEventListener("modal:close", function() {
 	console.log("closed")
 })
 
-$('#save-changes').click(fetchApiData);
+$('.card').click(getCuisine);
