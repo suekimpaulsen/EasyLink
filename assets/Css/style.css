@@ -8,6 +8,7 @@
     font-family: Helvetica, Arial, sans-serif;
   }
   
+  <!--Hero Style-->
   .hero.has-background {
     position: relative;
     overflow: hidden;
@@ -21,4 +22,9 @@
   }
   .hero-background.is-transparent {
     opacity: 0.3;
+  }
+
+  <!--Map Style-->
+  #map {
+    height: 100%;
   }
