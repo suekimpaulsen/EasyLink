@@ -61,8 +61,8 @@ function initMap() {
 	  location: { lat: 36.1627, lng: -86.7816 },
 	  radius: 40500,
 	  types: ['restaurant'],
-	  keyword: 'italian',
-	  openNow: 'true'
+	  keyword: 'italian'
+	  //openNow: 'true'
   }
 
   var service = new google.maps.places.PlacesService(map);
@@ -71,8 +71,8 @@ function initMap() {
 }
 
 callback = (results, status) => {
-	console.log(results);
-	if(status == google.maps.places.PlacesService.OK) {
+
+	if(status == google.maps.places.PlacesServiceStatus.OK) {
 		for(i = 0; i < results.length; i++) {
 			createMarker(results[i]);
 		}
@@ -80,13 +80,12 @@ callback = (results, status) => {
 }
 
 createMarker = (place) => {
-	if(!place.geometry || !place.geometry.location) return;
 
 	var marker = new google.maps.Marker({
 		map: map,
 		position: place.geometry.location
 	});
-
+	console.log(place);
 	google.maps.event.addListener(marker, 'click', () => {
 		infowindow.setContent(place.name || "");
     	infowindow.open(map);
