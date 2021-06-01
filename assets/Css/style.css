@@ -8,7 +8,7 @@
     font-family: Helvetica, Arial, sans-serif;
   }
   
-  <!--Hero Style-->
+  /*Hero-section*/
   .hero.has-background {
     position: relative;
     overflow: hidden;
@@ -24,7 +24,56 @@
     opacity: 0.3;
   }
 
+ /* modal*/
+  .modal-card-head {
+    align-items: center;
+    background-color: rgb(150, 45, 45);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    color: white;
+}
+.modal-card-title {
+  color: white;
+  text-align: center;
+}
+
+
+
+/*nave bar section*/
+#navbarBasicExample {
+  background-color: white;
+  font-size: 22px;
+  flex-wrap: wrap;
+}
+
+a.navbar-item {
+  background-color: white;
+}
+ /*contact-us portion*/
+ #contact-us {
+   text-align: center;
+ }
+
+
+
+.box {
+   text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+ #ready-box {
+   font-size: 22px;
+ }
+  
   <!--Map Style-->
   #map {
     height: 100%;
   }
+
+  
