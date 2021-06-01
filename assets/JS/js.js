@@ -28,32 +28,32 @@ fetchApiData = (cuisine) => {
         
 		console.log(response);
 
-	// 	//create container to hold all cards
-	// 	restaurantContainer = document.createElement('div');
-	// 	restaurantContainer.classList = 'practice';
-	// 	$('#results').append(restaurantContainer);
+		//create container to hold all cards
+		restaurantContainer = document.createElement('div');
+		restaurantContainer.classList = 'practice';
+		$('#results').append(restaurantContainer);
 
-	// 	for(i = 0; i < 4; i++) {
-	// 		//create individual restaurant containers
-	// 		createRestaurantEl = document.createElement('div');
-	// 		createRestaurantEl.classList = '';
-	// 		restaurantContainer.append(createRestaurantEl);
+		for(i = 0; i < 4; i++) {
+			//create individual restaurant containers
+			createRestaurantEl = document.createElement('div');
+			createRestaurantEl.classList = '';
+			restaurantContainer.append(createRestaurantEl);
 
-	// 		//create restaurant card name
-	// 		restaurantTitle = document.createElement('h2');
-	// 		restaurantTitle.textContent = response.data[i].restaurant_name;
-	// 		restaurantTitle.classList = '';
-	// 		createRestaurantEl.append(restaurantTitle);
+			//create restaurant card name
+			restaurantTitle = document.createElement('h2');
+			restaurantTitle.textContent = response.data[i].restaurant_name;
+			restaurantTitle.classList = '';
+			createRestaurantEl.append(restaurantTitle);
 
-	// 		//insert restaurant address
-	// 		restaurantAddress = document.createElement('h3');
-	// 		restaurantAddress.textContent = response.data[i].address.formatted;
-	// 		restaurantAddress.classList = '';
-	// 		createRestaurantEl.append(restaurantAddress);
-	// 	}
+			//insert restaurant address
+			restaurantAddress = document.createElement('h3');
+			restaurantAddress.textContent = response.data[i].address.formatted;
+			restaurantAddress.classList = '';
+			createRestaurantEl.append(restaurantAddress);
+		}
     })
 
-	//getModalInputInfo();
+	getModalInputInfo();
 }
 
 clearScreen = () => {
