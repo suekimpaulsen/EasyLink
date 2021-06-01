@@ -5,6 +5,7 @@ fetchApiData = () => {
 	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
 
 
+
     fetch(restaurantApi)
     .then((response) => {        
         return response.json();       
@@ -43,6 +44,69 @@ fetchApiData = () => {
 
 clearScreen = () => {
 	$('.practice').remove();
+}
+// map of activiteies pulls up 
+let map;
+let service;
+let infowindow;
+
+var request;
+var marker = [];
+
+function initMap() {
+	
+	map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 36.1627, lng: -86.7816 },
+    zoom: 12,
+  });
+
+  request = {
+	  location: { lat: 36.1627, lng: -86.7816 },
+	  radius: 40500,
+	  types: ['restaurant'],
+	  keyword: 'italian',
+	  openNow: 'true'
+  }
+
+  service = new google.maps.places.PlacesService(map);
+
+  service.nearbySearch(request, callback);
+
+  google.maps.event.addListener(map, 'rightclick', (e) => {
+	  map.setCenter(e.latLng);
+	  clearResults(markers);
+
+	  var request = {
+		  location: e.latLng,
+		  radius: 40500,
+		  types: ['restaurants']
+	  }
+	  service.nearbySearch(request, callback);
+  })
+  infowindow = new google.maps.InfoWindow();
+}
+
+callback = (results, status) => {
+
+	if(status == google.maps.places.PlacesServiceStatus.OK) {
+		for(i = 0; i < results.length; i++) {
+			createMarker(results[i]);
+		}
+	}
+}
+
+createMarker = (place) => {
+
+	marker = new google.maps.Marker({
+		map: map,
+		position: place.geometry.location
+	});
+	
+	google.maps.event.addListener(marker, 'click', (e) => {
+		infowindow.setContent(place.name);
+		infowindow.setPosition(e.latLng);
+    	infowindow.open(map);
+	});
 }
 
 // when you click get started button
@@ -166,3 +230,4 @@ mdl.addEventListener("modal:close", function() {
 })
 
 $('#save-changes').click(fetchApiData);
+
