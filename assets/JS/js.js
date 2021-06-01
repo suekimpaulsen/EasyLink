@@ -50,24 +50,40 @@ let map;
 let service;
 let infowindow;
 
+var request;
+var marker = [];
+
 function initMap() {
-	infowindow = new google.maps.InfoWindow();
+	
 	map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 36.1627, lng: -86.7816 },
     zoom: 12,
   });
 
-  var request = {
+  request = {
 	  location: { lat: 36.1627, lng: -86.7816 },
 	  radius: 40500,
 	  types: ['restaurant'],
-	  keyword: 'italian'
-	  //openNow: 'true'
+	  keyword: 'italian',
+	  openNow: 'true'
   }
 
-  var service = new google.maps.places.PlacesService(map);
+  service = new google.maps.places.PlacesService(map);
 
   service.nearbySearch(request, callback);
+
+  google.maps.event.addListener(map, 'rightclick', (e) => {
+	  map.setCenter(e.latLng);
+	  clearResults(markers);
+
+	  var request = {
+		  location: e.latLng,
+		  radius: 40500,
+		  types: ['restaurants']
+	  }
+	  service.nearbySearch(request, callback);
+  })
+  infowindow = new google.maps.InfoWindow();
 }
 
 callback = (results, status) => {
@@ -81,13 +97,14 @@ callback = (results, status) => {
 
 createMarker = (place) => {
 
-	var marker = new google.maps.Marker({
+	marker = new google.maps.Marker({
 		map: map,
 		position: place.geometry.location
 	});
-	console.log(place);
-	google.maps.event.addListener(marker, 'click', () => {
-		infowindow.setContent(place.name || "");
+	
+	google.maps.event.addListener(marker, 'click', (e) => {
+		infowindow.setContent(place.name);
+		infowindow.setPosition(e.latLng);
     	infowindow.open(map);
 	});
 }
