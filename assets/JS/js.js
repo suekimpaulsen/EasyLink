@@ -12,12 +12,14 @@ fetchApiData = (cuisine) => {
     
 	clearScreen();
 
+
 	
 	
 	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=' + cuisine + '&key=e3fb5dcdf4c00fbb833a184f0893222e';
 
 
 	var googleApi = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyBtM_oTP6sMahXfTnWC2GEM4Q8es01OrKQ';
+
 
 
     fetch(googleApi)
