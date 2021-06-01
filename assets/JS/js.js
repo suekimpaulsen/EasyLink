@@ -92,8 +92,46 @@ callback = (results, status) => {
 		for(i = 0; i < results.length; i++) {
 			createMarker(results[i]);
 		}
+		console.log(results[0].name)
+		console.log(results[0].vicinity)
+
+		// createCards();
+		var card = document.createElement('div');
+		$(card).addClass('card columns').appendTo('#results')
+
+		var cardContent = document.createElement('div');
+		$(cardContent).addClass('card-content').appendTo(card)
+
+		var cardTitle = document.createElement('p')
+		$(cardTitle).addClass('title')
+			.html(results[0].name);
+
+		var cardDetail = document.createElement('p')
+		$(cardDetail).addClass('subtitle')
+			.html(results[0].vicinity);
+
+		cardContent.append(cardTitle, cardDetail)
+
 	}
+
 }
+// createCards = () => {
+// 	var card = document.createElement('div');
+// 	$(card).addClass('card columns').appendTo('#results')
+
+// 	var cardContent = document.createElement('div');
+// 	$(cardContent).addClass('card-content').appendTo(card)
+
+// 	var cardTitle = document.createElement('p')
+// 	$(cardTitle).addClass('title')
+// 		// .html();
+
+// 	var cardDetail = document.createElement('p')
+// 	$(cardDetail).addClass('subtitle')
+// 		// .html(results[0].vicinity);
+
+// 	cardContent.append(cardTitle, cardDetail)
+// }
 
 createMarker = (place) => {
 
@@ -107,7 +145,10 @@ createMarker = (place) => {
 		infowindow.setPosition(e.latLng);
     	infowindow.open(map);
 	});
+
 }
+
+
 
 // when you click get started button
 // about you modal pops up

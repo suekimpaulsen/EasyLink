@@ -28,3 +28,9 @@
   #map {
     height: 100%;
   }
+
+  <!--Card Style-->
+  .columns {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
