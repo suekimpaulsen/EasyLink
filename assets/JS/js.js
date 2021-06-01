@@ -13,29 +13,54 @@ fetchApiData = () => {
     .then((response) => {
         
 		console.log(response);
-
-		//create container to hold all cards
-		restaurantContainer = document.createElement('div');
-		restaurantContainer.classList = 'practice';
-		$('#results').append(restaurantContainer);
+        $('#results').html('')
 
 		for(i = 0; i < 4; i++) {
-			//create individual restaurant containers
-			createRestaurantEl = document.createElement('div');
-			createRestaurantEl.classList = '';
-			restaurantContainer.append(createRestaurantEl);
+            //create cards including card footer for map
+            var cardContent = document.createElement('div');
+            $(cardContent).addClass('card-content')
+            $('#results').append(cardContent)
 
-			//create restaurant card name
-			restaurantTitle = document.createElement('h2');
-			restaurantTitle.textContent = response.data[i].restaurant_name;
-			restaurantTitle.classList = '';
-			createRestaurantEl.append(restaurantTitle);
+            var restaurantName = document.createElement('p')
+            $(restaurantName).addClass('title')
+            .html(response.data[i].restaurant_name);
 
-			//insert restaurant address
-			restaurantAddress = document.createElement('h3');
-			restaurantAddress.textContent = response.data[i].address.formatted;
-			restaurantAddress.classList = '';
-			createRestaurantEl.append(restaurantAddress);
+            var restaurantAddress = document.createElement('p')
+            $(restaurantAddress).addClass('subtitle')
+            .html(response.data[i].address.formatted)
+
+            var cardFooter = document.createElement('footer')
+            $(cardFooter).addClass('card-footer')
+
+            // var viewOn = document.createElement('p')
+            // var mapLink = document.createElement('span')
+            // $(viewOn).addClass('card-footer-item').html('View on ' + )
+
+
+            cardContent.append(restaurantName, restaurantAddress)
+
+
+            // //create container to hold all cards
+            // restaurantContainer = document.createElement('div');
+            // restaurantContainer.classList = 'practice';
+            // $('#results').append(restaurantContainer);
+
+			// //create individual restaurant containers
+			// createRestaurantEl = document.createElement('div');
+			// createRestaurantEl.classList = '';
+			// restaurantContainer.append(createRestaurantEl);
+
+			// //create restaurant card name
+			// restaurantTitle = document.createElement('h2');
+			// restaurantTitle.textContent = response.data[i].restaurant_name;
+			// restaurantTitle.classList = '';
+			// createRestaurantEl.append(restaurantTitle);
+
+			// //insert restaurant address
+			// restaurantAddress = document.createElement('h3');
+			// restaurantAddress.textContent = response.data[i].address.formatted;
+			// restaurantAddress.classList = '';
+			// createRestaurantEl.append(restaurantAddress);
 		}
     })
 
@@ -85,7 +110,7 @@ createMarker = (place) => {
 		map: map,
 		position: place.geometry.location
 	});
-	console.log(place);
+	// console.log(place);
 	google.maps.event.addListener(marker, 'click', () => {
 		infowindow.setContent(place.name || "");
     	infowindow.open(map);
