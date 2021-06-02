@@ -41,7 +41,7 @@
                                 Reviews
                             </a>
                             <hr class="navbar-divider">
-                            <a class="navbar-item" href="#results">
+                            <a class="navbar-item" href="#results-section">
                                 Results
                             </a>
                             <hr class="navbar-divider">
@@ -49,163 +49,162 @@
                                 Contact Us
                             </a>
 
+                            </d iv>
                         </div>
                     </div>
             </nav>
         </div>
-        <div>
-            <article>
+    </section>
+    <div>
+        <article>
 
-            </article>
-        </div>
+        </article>
+    </div>
 
-        <!-- Hero content: will be in the middle -->
+    <!-- Hero content: will be in the middle -->
 
-        <div class="hero-body">
-            <img src="./assets/Images/HeroImg.jpeg">
-            <div class="container has-text-centered">
-                <div class="box" id="ready-box">
-                    <h3>Ready to Link Up?</h3>
-                    <p>Tell Us About You So We Can Plan Your Perfect Day!</p>
-                    <button class="button is-danger is-rounded" id="btn">Get Started!</button>
-                </div>
-
+    <div class="hero-body">
+        <img src="./assets/Images/HeroImg.jpeg">
+        <div class="container has-text-centered">
+            <div class="box" id="ready-box">
+                <h3>Ready to Link Up?</h3>
+                <p>Tell Us About You So We Can Plan Your Perfect Day!</p>
+                <button class="button is-danger is-rounded" id="btn">Get Started!</button>
             </div>
+
         </div>
-        <main>
-            <!--area map for reference-->
-            <section class="section is-large" id="map">
-            </section>
+    </div>
+    <main>
+        <!--area map for reference-->
+        <section class="section is-large" id="map">
+        </section>
 
-            <!--About you Form-->
-            <div class="modal" id="myModal">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                        <figure class="image is-64x64">
-                            <img src="assets/Images/Icon.png" alt="Logo">
-                        </figure>
+        <!--About you Form-->
+        <div class="modal" id="myModal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <figure class="image is-64x64">
+                        <img src="assets/Images/Icon.png" alt="Logo">
+                    </figure>
 
-                        <p class="modal-card-title">About you</p>
-                        <button class="delete" aria-label="close"></button>
-                    </header>
-                    <section class="modal-card-body">
-                        <div class="field">
-                            <label class="label">Name</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="e.g Alex Smith">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Age</label>
-                            <div class="control">
-                                <input class="input" id="age" type="number" placeholder="e.g 24">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Cuisine Type</label>
-                            <div class="control">
-                                <input class="input" id="cuisine-type" type="text" placeholder="e.g. Italian">
-                            </div>
-                        </div>
+                    <p class="modal-card-title">About you</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="field">
+                        <label class="label">Name</label>
                         <div class="control">
-                            <div class="select">
-                                <select id="bar-answer">
-                                    <option>Bars?</option>
-                                    <option value="yes">yes...DUH!!</option>
-                                    <option value="no">No...not really my thing!</option>
-                                </select>
-                            </div>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button class="button is-success" id="save-changes">Save changes</button>
-                        <button class="button">Cancel</button>
-                    </footer>
-                </div>
+                            <input class="input" type="text" placeholder="e.g Alex Smith">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Age</label>
+                        <div class="control">
+                            <input class="input" id="age" type="number" placeholder="e.g 24">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Cuisine Type</label>
+                        <div class="control">
+                            <input class="input" id="cuisine-type" type="text" placeholder="e.g. Italian">
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="select">
+                            <select id="bar-answer">
+                                <option>Bars?</option>
+                                <option value="yes">yes...DUH!!</option>
+                                <option value="no">No...not really my thing!</option>
+                            </select>
+                        </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success" id="save-changes">Save changes</button>
+                    <button class="button">Cancel</button>
+                </footer>
             </div>
+        </div>
 
-            <!--Results-->
-            <section class="section is-medium">
-                <h1 class="title" id="results">Results</h1>
-                <div class="columns" id="results"></div>
-                <h2 class="subtitle">
-                    A simple container to divide your page into <strong>sections</strong>, like the one you're currently
-                    reading.
-                </h2>
-            </section>
-            <!--Contact Us-->
-            <section class="section is-small is-0-mobile">
-                <h1 class="title" id="contact-us">Contact Us</h1>
-                <div class="columns" id="contact-us">
-                    <div class="column is-two-fifths">
+        <!--Results-->
+        <section class="section is-medium" id="results-section">
+            <h1 class="title">Results</h1>
+            <div class="columns" id="results"></div>
+            <h2 class="subtitle"></h2>
+        </section>
+        <!--Contact Us-->
+        <section class="section is-small is-0-mobile">
+            <h1 class="title" id="contact-us">Contact Us</h1>
+            <div class="columns" id="contact-us">
+                <div class="column is-two-fifths">
+                    <div class="field">
+                        <label class="label" id="user-name">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Enter Your Name!">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" id="contact-email">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="email" placeholder="Email input" value="">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                        </div>
+
                         <div class="field">
-                            <label class="label" id="user-name">Name</label>
+                            <label class="label" id="experience">Have You Enjoyed You Experience?
+                            </label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Enter Your Name!">
+                                <div class="select">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>Yes :)</option>
+                                        <option>No :(</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
                         <div class="field">
-                            <label class="label" id="contact-email">Email</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="Email input" value="">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                            </div>
-
-                            <div class="field">
-                                <label class="label" id="experience" >Have You Enjoyed You Experience?
-                                </label>
-                                <div class="control">
-                                    <div class="select">
-                                        <select>
-                                            <option>Select dropdown</option>
-                                            <option>Yes :)</option>
-                                            <option>No :(</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label" id="user-message" >Write Us A Message </label>
-                                <div class="control">
-                                    <textarea class="textarea" placeholder="Your Message!"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="field is-grouped">
-                                <div class="control">
-                                    <button id="submitBtn" class="button is-link">Submit</button>
-                                </div>
-                                <div class="control">
-                                    <button id="cancelBtn" class="button is-link is-light" type="submit">Cancel</button>
-                                </div>
+                            <label class="label" id="user-message">Write Us A Message </label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Your Message!"></textarea>
                             </div>
                         </div>
-                        <div class="columns">
-                            <div class="column"></div>
-                            <div class="column is-two-fifths">
-                                <img src="./assets/Images/Icon.png">
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button id="submitBtn" class="button is-link">Submit</button>
+                            </div>
+                            <div class="control">
+                                <button id="cancelBtn" class="button is-link is-light" type="submit">Cancel</button>
                             </div>
                         </div>
-        </main>
-        <script async
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtM_oTP6sMahXfTnWC2GEM4Q8es01OrKQ&callback=initMap&libraries=places&v=weekly">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="./assets/JS/js.js"></script>
+                    </div>
+                    <div class="columns">
+                        <div class="column"></div>
+                        <div class="column is-two-fifths">
+                            <img src="./assets/Images/Icon.png">
+                        </div>
+                    </div>
+    </main>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtM_oTP6sMahXfTnWC2GEM4Q8es01OrKQ&callback=initMap&libraries=places&v=weekly">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/JS/js.js"></script>
 
 </body>
 <footer>
