@@ -33,11 +33,13 @@ saveAboutYou = (currentInfo) => {
 	//save newest information to local storage
 	localStorage.setItem('about-you', JSON.stringify(aboutYouInfo));
 
+	clearScreen();
+
 	initMap(aboutYouInfo);
 }
 
 clearScreen = () => {
-	$('.practice').remove();
+	$('.card-container').remove();
 }
 
 // map of activiteies pulls up 
@@ -91,16 +93,14 @@ searchForPlaces = (currentOption) => {
 
 createCardsFromApi = (results) => {
 
-	clearScreen();
-
 	//create container to hold all cards
-	restaurantContainer = document.createElement('div');
-	restaurantContainer.classList = 'practice';
-	$('#results').append(restaurantContainer);
+	cardContainer = document.createElement('div');
+	cardContainer.classList = 'card-container';
+	$('#results').append(cardContainer);
 
 					
 	var card = document.createElement('div');
-		$(card).addClass('card columns').appendTo('#results')
+		$(card).addClass('card columns').appendTo(cardContainer)
 
 	var cardContent = document.createElement('div');
 		$(cardContent).addClass('card-content').appendTo(card)
