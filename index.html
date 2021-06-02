@@ -119,11 +119,11 @@
                             </div>
                         </div>
                         <div class="control">
-                            <div class="select">
-                                <select>
-                                    <option>Bars?</option>
-                                    <option>yes...DUH!!</option>
-                                    <option>No...not really my thing!</option>
+                            <label class="label">Do you like bars?</label>
+                            <div class="select">  
+                                <select id="bar-options">
+                                    <option class="options" value="true">yes...DUH!!</option>
+                                    <option class="options" value="false">No...not really my thing!</option>
                                 </select>
                             </div>
                     </section>
@@ -138,10 +138,6 @@
             <section class="section is-medium">
                 <h1 class="title">Results</h1>
                 <div class="columns" id="results"></div>
-                <h2 class="subtitle">
-                    A simple container to divide your page into <strong>sections</strong>, like the one you're currently
-                    reading.
-                </h2>
             </section>
             <!--Contact Us-->
             <section class="section is-small is-0-mobile">
