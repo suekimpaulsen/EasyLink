@@ -2,7 +2,7 @@ fetchApiData = () => {
     
 	clearScreen();
 	
-	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
+	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine="&key=e3fb5dcdf4c00fbb833a184f0893222e'
 
 
 
@@ -64,7 +64,7 @@ function initMap() {
 	  location: { lat: 36.1627, lng: -86.7816 },
 	  radius: 40500,
 	  types: ['restaurant'],
-	  keyword: 'italian',
+	  keyword: '',
 	  openNow: 'true'
   }
 
@@ -123,11 +123,14 @@ getModalInputInfo = () => {
 	//store input values into vraiables
 	var name = $('input[type="text"]').val();
 	var email = $('input[type="email"]').val();
-
+	var age = $('input[id="age"]').val();
+	var cuisineType = $('input[id="cuisine-type"]').val();
 	//turn variables into objects
 	var currentInfo = {
 		name: name,
-		email: email
+		email: email,
+		age: age,
+		cuisineType: cuisineType
 	}
 
 	saveAboutYou(currentInfo)
@@ -158,8 +161,18 @@ saveAboutYou = (currentInfo) => {
 
 
 // CONTACT US
+var cEmail = $('input[type="text"]').val();
+var cExperience = $('input[type="option"]').val();
+var cMessage = $('input[type="textarea"]').val();
+var cSubmit = $('input[type="button"]').val();
+var cCancel = $('input[type="button"]').val();
 
 
+function contactUs() {
+	$.onclick("click", function() {
+		console.log ("this works")
+	})
+}
 // NAVBAR-BURGER
 // directs to its page when clicked
 
@@ -229,4 +242,4 @@ mdl.addEventListener("modal:close", function() {
 	console.log("closed")
 })
 
-$('#save-changes').click(fetchApiData);
+$('#save-changes').click(getModalInputInfo);

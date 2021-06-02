@@ -8,6 +8,11 @@
     font-family: Helvetica, Arial, sans-serif;
   }
   
+  .columns {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
   /*Hero-section*/
   .hero.has-background {
     position: relative;

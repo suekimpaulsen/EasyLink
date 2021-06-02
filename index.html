@@ -106,11 +106,24 @@
                                 <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
                             </div>
                         </div>
+                        <div class="field">
+                            <label class="label">Age</label>
+                            <div class="control">
+                                <input class="input" id="age" type="number" placeholder="e.g 24">
+                            </div>
+                        </div> 
+                        <div class="field">
+                            <label class="label">Cuisine Type</label>
+                            <div class="control">
+                                <input class="input" id="cuisine-type" type="text" placeholder="e.g. Italian">
+                            </div>
+                        </div>
                         <div class="control">
                             <div class="select">
                                 <select>
-                                    <option>Select dropdown</option>
-                                    <option>With options</option>
+                                    <option>Bars?</option>
+                                    <option>yes...DUH!!</option>
+                                    <option>No...not really my thing!</option>
                                 </select>
                             </div>
                     </section>
@@ -121,31 +134,15 @@
                 </div>
             </div>
 
-            <!--Activities-->
-            <section class="section is-medium" id="activities">
-                <h1 class="title">Activities</h1>
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">
-                        </p>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
             <!--Results-->
-            <section class="section is-medium" id="results">
+            <section class="section is-medium">
                 <h1 class="title">Results</h1>
+                <div class="columns" id="results"></div>
                 <h2 class="subtitle">
                     A simple container to divide your page into <strong>sections</strong>, like the one you're currently
                     reading.
                 </h2>
             </section>
-
             <!--Contact Us-->
             <section class="section is-small is-0-mobile">
                 <h1 class="title">Contact Us</h1>
@@ -193,10 +190,10 @@
 
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <button class="button is-link">Submit</button>
+                                    <button id="submitBtn" class="button is-link">Submit</button>
                                 </div>
                                 <div class="control">
-                                    <button class="button is-link is-light">Cancel</button>
+                                    <button id="cancelBtn" class="button is-link is-light" type="submit">Cancel</button>
                                 </div>
                             </div>
                         </div>
