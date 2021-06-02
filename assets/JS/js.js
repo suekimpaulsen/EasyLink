@@ -1,50 +1,44 @@
-fetchApiData = () => {
-    
-	clearScreen();
-	
-	var restaurantApi = 'https://api.documenu.com/v2/restaurants/search/geo?lat=36.16589&lon=-86.78444&distance=25&cuisine=italian&key=e3fb5dcdf4c00fbb833a184f0893222e'
-
-
-
-    fetch(restaurantApi)
-    .then((response) => {        
-        return response.json();       
-    })
-    .then((response) => {
-        
-		console.log(response);
-
-		//create container to hold all cards
-		restaurantContainer = document.createElement('div');
-		restaurantContainer.classList = 'practice';
-		$('#results').append(restaurantContainer);
-
-		for(i = 0; i < 4; i++) {
-			//create individual restaurant containers
-			createRestaurantEl = document.createElement('div');
-			createRestaurantEl.classList = '';
-			restaurantContainer.append(createRestaurantEl);
-
-			//create restaurant card name
-			restaurantTitle = document.createElement('h2');
-			restaurantTitle.textContent = response.data[i].restaurant_name;
-			restaurantTitle.classList = '';
-			createRestaurantEl.append(restaurantTitle);
-
-			//insert restaurant address
-			restaurantAddress = document.createElement('h3');
-			restaurantAddress.textContent = response.data[i].address.formatted;
-			restaurantAddress.classList = '';
-			createRestaurantEl.append(restaurantAddress);
-		}
-    })
-
-	getModalInputInfo();
+var currentInfo = {
+	options: ['restaurant', 'bar',]
 }
+
+
+getModalInputInfo = () => {
+	//store input values into vraiables
+	var name = $('input[type="text"]').val();
+	var email = $('input[type="email"]').val();
+	
+
+	//turn variables into objects
+	var currentInfo = {
+		name: name,
+		email: email,
+		options: ['restaurant', 'bar']
+	}
+
+	saveAboutYou(currentInfo)
+	
+}
+
+saveAboutYou = (currentInfo) => {
+	//create array
+	var aboutYouInfo = [];
+
+	// add form information to array
+	aboutYouInfo.push(currentInfo);
+
+	//save newest information to local storage
+	localStorage.setItem('about-you', JSON.stringify(aboutYouInfo));
+
+	// initMap(currentInfo);
+}
+
+
 
 clearScreen = () => {
 	$('.practice').remove();
 }
+
 // map of activiteies pulls up 
 let map;
 let service;
@@ -53,8 +47,7 @@ let infowindow;
 var request;
 var marker = [];
 
-function initMap() {
-	
+initMap = () => {
 	map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 36.1627, lng: -86.7816 },
     zoom: 12,
@@ -62,15 +55,15 @@ function initMap() {
 
   request = {
 	  location: { lat: 36.1627, lng: -86.7816 },
-	  radius: 40500,
-	  types: ['restaurant'],
-	  keyword: 'italian',
-	  openNow: 'true'
+	  radius: 5000,
+	  keyword: currentInfo.options,
+	  openNow: 'true',
+	  rankby: 'prominence'
   }
 
   service = new google.maps.places.PlacesService(map);
 
-  service.nearbySearch(request, callback);
+  service.nearbySearch(request, placeMarkersOnMap);
 
   google.maps.event.addListener(map, 'rightclick', (e) => {
 	  map.setCenter(e.latLng);
@@ -78,21 +71,64 @@ function initMap() {
 
 	  var request = {
 		  location: e.latLng,
-		  radius: 40500,
-		  types: ['restaurants']
+		  radius: 5000,
+		  keyword: currentInfo.options
 	  }
-	  service.nearbySearch(request, callback);
+	  service.nearbySearch(request, placeMarkersOnMap);
   })
   infowindow = new google.maps.InfoWindow();
 }
 
-callback = (results, status) => {
+createCardsFromApi = (results) => {
+	console.log(results);
+
+	//create container to hold all cards
+	restaurantContainer = document.createElement('div');
+	restaurantContainer.classList = 'practice';
+	$('#results').append(restaurantContainer);
+
+	for(i = 0; i < currentInfo.options.length; i++) {
+		
+		for(k = 0; k < results.length; k++) {
+
+			for(m = 0; m < results[k].types.length; m++) {
+
+				if(results[k].types[m] == currentInfo.options[i]) {
+					console.log(results[k].types[m]);
+					
+					var card = document.createElement('div');
+						$(card).addClass('card columns').appendTo('#results')
+
+					var cardContent = document.createElement('div');
+						$(cardContent).addClass('card-content').appendTo(card)
+
+					var cardTitle = document.createElement('p')
+						$(cardTitle).addClass('title')
+						.html(results[k].name);
+
+					var cardDetail = document.createElement('p')
+						$(cardDetail).addClass('subtitle')
+						.html(results[k].vicinity);
+						cardContent.append(cardTitle, cardDetail)
+					break;
+				}
+			}
+			break;	
+		}
+	}
+
+	// getModalInputInfo();
+}
+
+placeMarkersOnMap = (results, status) => {
 
 	if(status == google.maps.places.PlacesServiceStatus.OK) {
 		for(i = 0; i < results.length; i++) {
 			createMarker(results[i]);
 		}
+		createCardsFromApi(results);
 	}
+	
 }
 
 createMarker = (place) => {
@@ -119,31 +155,8 @@ createMarker = (place) => {
 // activities page shows up
 // select the options that are given
 
-getModalInputInfo = () => {
-	//store input values into vraiables
-	var name = $('input[type="text"]').val();
-	var email = $('input[type="email"]').val();
-
-	//turn variables into objects
-	var currentInfo = {
-		name: name,
-		email: email
-	}
-
-	saveAboutYou(currentInfo)
-}
 
 
-saveAboutYou = (currentInfo) => {
-	//create array
-	var aboutYouInfo = [];
-
-	// add form info to leaderboard
-	aboutYouInfo.push(currentInfo);
-
-	//add newest information to local storage
-	localStorage.setItem('about-you', JSON.stringify(aboutYouInfo));
-}
 
 
 
@@ -228,5 +241,3 @@ mdl.addEventListener('modal:show', function() {
 mdl.addEventListener("modal:close", function() {
 	console.log("closed")
 })
-
-$('#save-changes').click(fetchApiData);
