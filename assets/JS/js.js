@@ -7,13 +7,14 @@ getModalInputInfo = () => {
 	//store input values into vraiables
 	var name = $('input[type="text"]').val();
 	var email = $('input[type="email"]').val();
-	
-
+	var age = $('input[id="age"]').val();
+	var cuisineType = $('input[id="cuisine-type"]').val();
 	//turn variables into objects
 	var currentInfo = {
 		name: name,
 		email: email,
-		options: ['restaurant', 'bar']
+		age: age,
+		cuisineType: cuisineType
 	}
 
 	saveAboutYou(currentInfo)
@@ -156,10 +157,6 @@ createMarker = (place) => {
 // select the options that are given
 
 
-
-
-
-
 // REVIEWS
 // list out the options that were selected in the activities page
 
@@ -171,8 +168,18 @@ createMarker = (place) => {
 
 
 // CONTACT US
+var cEmail = $('input[type="text"]').val();
+var cExperience = $('input[type="option"]').val();
+var cMessage = $('input[type="textarea"]').val();
+var cSubmit = $('input[type="button"]').val();
+var cCancel = $('input[type="button"]').val();
 
 
+function contactUs() {
+	$.onclick("click", function() {
+		console.log ("this works")
+	})
+}
 // NAVBAR-BURGER
 // directs to its page when clicked
 
@@ -241,3 +248,5 @@ mdl.addEventListener('modal:show', function() {
 mdl.addEventListener("modal:close", function() {
 	console.log("closed")
 })
+
+$('#save-changes').click(getModalInputInfo);
