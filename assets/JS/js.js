@@ -135,7 +135,8 @@ createMarker = (place) => {
 	});
 	
 	google.maps.event.addListener(marker, 'click', (e) => {
-		infowindow.setContent(place.name);
+		var placeDetail = "<b>" + place.name + "</b> <br/>" + place.vicinity;
+		infowindow.setContent(placeDetail);
 		infowindow.setPosition(e.latLng);
     	infowindow.open(map);
 	});
