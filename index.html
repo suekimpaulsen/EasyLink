@@ -35,25 +35,22 @@
                             <a class="navbar-item is-active">
                                 Home
                             </a>
-                            <div class="navbar-item is-hoverable">
-                                <a class="navbar-item" href="#activities">
-                                    Activities
-                                </a>
-                                <hr class="navbar-divider">
-                                <a class="navbar-item">
-                                    Reviews
-                                </a>
-                                <hr class="navbar-divider">
-                                <a class="navbar-item" href="#results">
-                                    Results
-                                </a>
-                                <hr class="navbar-divider">
-                                <a class="navbar-item" href="#contact-us">
-                                    Contact Us
-                                </a>
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Reviews
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="#results">
+                                Results
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="#contact-us">
+                                Contact Us
+                            </a>
 
-                            </div>
                         </div>
+                    </div>
             </nav>
         </div>
         <div>
@@ -111,7 +108,7 @@
                             <div class="control">
                                 <input class="input" id="age" type="number" placeholder="e.g 24">
                             </div>
-                        </div> 
+                        </div>
                         <div class="field">
                             <label class="label">Cuisine Type</label>
                             <div class="control">
@@ -120,10 +117,10 @@
                         </div>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select id="bar-answer">
                                     <option>Bars?</option>
-                                    <option>yes...DUH!!</option>
-                                    <option>No...not really my thing!</option>
+                                    <option value="yes">yes...DUH!!</option>
+                                    <option value="no">No...not really my thing!</option>
                                 </select>
                             </div>
                     </section>
@@ -136,7 +133,7 @@
 
             <!--Results-->
             <section class="section is-medium">
-                <h1 class="title">Results</h1>
+                <h1 class="title" id="results">Results</h1>
                 <div class="columns" id="results"></div>
                 <h2 class="subtitle">
                     A simple container to divide your page into <strong>sections</strong>, like the one you're currently
@@ -145,20 +142,20 @@
             </section>
             <!--Contact Us-->
             <section class="section is-small is-0-mobile">
-                <h1 class="title">Contact Us</h1>
+                <h1 class="title" id="contact-us">Contact Us</h1>
                 <div class="columns" id="contact-us">
                     <div class="column is-two-fifths">
                         <div class="field">
-                            <label class="label">Name</label>
+                            <label class="label" id="user-name">Name</label>
                             <div class="control">
                                 <input class="input" type="text" placeholder="Enter Your Name!">
                             </div>
                         </div>
 
                         <div class="field">
-                            <label class="label">Email</label>
+                            <label class="label" id="contact-email">Email</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="Email input" value="hello@">
+                                <input class="input" type="email" placeholder="Email input" value="">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -168,7 +165,7 @@
                             </div>
 
                             <div class="field">
-                                <label class="label">Have You Enjoyed You Experience?
+                                <label class="label" id="experience" >Have You Enjoyed You Experience?
                                 </label>
                                 <div class="control">
                                     <div class="select">
@@ -182,7 +179,7 @@
                             </div>
 
                             <div class="field">
-                                <label class="label">Write Us A Message </label>
+                                <label class="label" id="user-message" >Write Us A Message </label>
                                 <div class="control">
                                     <textarea class="textarea" placeholder="Your Message!"></textarea>
                                 </div>

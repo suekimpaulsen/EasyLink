@@ -4,22 +4,25 @@ var currentInfo = {
 
 
 getModalInputInfo = () => {
-	//store input values into vraiables
+	//store input values into variables
 	var name = $('input[type="text"]').val();
 	var email = $('input[type="email"]').val();
 	var age = $('input[id="age"]').val();
 	var cuisineType = $('input[id="cuisine-type"]').val();
+	var barOption = $('select[id="bar-answer"]').val();
+	
+
 	//turn variables into objects
 	var currentInfo = {
 		name: name,
 		email: email,
 		age: age,
-		cuisineType: cuisineType
-	}
-
+		cuisineType: cuisineType,
+		barOption: 
+ 
 	saveAboutYou(currentInfo)
 	
-}
+}}
 
 saveAboutYou = (currentInfo) => {
 	//create array
@@ -168,17 +171,27 @@ createMarker = (place) => {
 
 
 // CONTACT US
-var cEmail = $('input[type="text"]').val();
-var cExperience = $('input[type="option"]').val();
-var cMessage = $('input[type="textarea"]').val();
-var cSubmit = $('input[type="button"]').val();
-var cCancel = $('input[type="button"]').val();
+var cUserName = $('input[id="user-name"]').val();
+var cEmail = $('input[id="contact-email"]').val();
+var cExperience = $('input[id="experience"]').val();
+var cMessage = $('input[id="user-message"]').val();
+var cSubmit = $('input[id="submitBtn"]').val();
+var cCancel = $('input[id="cancelBtn"]').val();
 
-
+var contactInfo = {
+	cExperience: Object.onclick=function(){yes, no},
+	cEmail: Object.onclick=function(){"contact-email"},
+	cMessage: Object.onclick=function(){"user-message"},
+	cSubmit: Object.onclick=function(){"submitBtn"},
+	cCancel: Object.onclick=function(){"cancelBtn"},
+};
 function contactUs() {
-	$.onclick("click", function() {
+	$.onclick("click", function(contactInfo) {
 		console.log ("this works")
 	})
+
+
+	localStorage.setItem()
 }
 // NAVBAR-BURGER
 // directs to its page when clicked
