@@ -90,7 +90,8 @@ searchForPlaces = (currentOption) => {
 }
 
 createCardsFromApi = (results) => {
-	console.log(results);
+
+	clearScreen();
 
 	//create container to hold all cards
 	restaurantContainer = document.createElement('div');
