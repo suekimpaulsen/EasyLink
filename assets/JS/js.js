@@ -3,7 +3,7 @@ getModalInputInfo = () => {
 	var name = $('input[type="text"]').val();
 	var email = $('input[type="email"]').val();
 	var age = $('input[id="age"]').val();
-	var cuisineType = $('input[id="cuisine-type"]').val();
+	var cuisineType = $('#cuisine-type').val();
 	var bars = $('#bar-options').val();
 	
 
