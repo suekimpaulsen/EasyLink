@@ -143,36 +143,30 @@ createMarker = (place) => {
 }
 
 // CONTACT US
-var cEmail = $('input[type="text"]').val();
-var cExperience = $('input[type="option"]').val();
-var cMessage = $('input[type="textarea"]').val();
-var cSubmit = $('input[type="button"]').val();
-var cCancel = $('input[type="button"]').val();
+saveContactUs = () => {
+	var cName = $('#contact-us-name').val()
+	var cEmail = $('#contact-us-email').val()
+	var cExperience = $('#are-you-happy').val()
+	var cMessage = $('#message').val()
 
 
-function contactUs() {
-	$.onclick("click", function() {
-		console.log ("this works")
-	})
-}
-
-
-
-//age group options for Bulma--unknown 
-/*var ageGroup21 = ["21", "22", "23", "24", "25", "26", "27", "28", "29","30"];
-var ageGroup31 = ["31","32", "33", "34", "35", "36", "37", "38", "39", "40"];
-var ageGroup41 = ["41", "42", "43", "44", "45", "46", "47", "48", "49", "50"];
-var ageGroup51 = ["51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65"];
-var ageGroup66 = ["66", "over"];
-
-function AgeGroupEl(){
-	ageGroup21 = window.confirm ("Are You between the Age of 21-30?")
-	switch(ageGroup21) {
-		case true:
-			break;
+	console.log('apples')
+	var contactUsForm = {
+		name: cName,
+		email: cEmail,
+		expirence: cExperience,
+		message: cMessage
 	}
-}*/
+	//pull down from local storage
+	var savedContactUsInfo = JSON.parse(localStorage.getItem('contact-us')) || [];
 
+	//push new content to local storage
+	savedContactUsInfo.push(contactUsForm)
+
+	//save to local storage
+	localStorage.setItem('contact-us', JSON.stringify(savedContactUsInfo))
+
+}
 
 
 class BulmaModal {
@@ -240,3 +234,4 @@ mdl.addEventListener("modal:close", function() {
 })
 
 $('#save-changes').click(getModalInputInfo);
+$('#submitBtn').click(saveContactUs)
