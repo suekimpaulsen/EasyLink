@@ -102,18 +102,33 @@
                         <div class="field">
                             <label class="label">Age</label>
                             <div class="control">
-                                <input class="input" id="age" type="number" placeholder="e.g 24">
+                                <select class="checkbox">
+                                    <option class="option" type="checkbox" id="age21-30"> 21-30
+                                    <option class="option" type="checkbox" id="age31-40"> 31-40
+                                    <option class="option" type="checkbox" id="age41-50"> 41-50
+                                    <option class="option" type="checkbox" id="age51-65"> 51-65
+                                    <option class="option" type="checkbox" id="age66-over"> 66-Over
+                                </select>
                             </div>
-                        </div> 
+
+                        </div>
                         <div class="field">
                             <label class="label">Cuisine Type</label>
                             <div class="control">
-                                <input class="input" id="cuisine-type" type="text" placeholder="e.g. Italian">
+                                <select class="cuisine-option" id="cuisine-type" type="checkbox">
+                                    <option class="options" value="american">American Cuisine</option>
+                                    <option class="options" value="italian">Italian Cuisine</option>
+                                    <option class="options" value="southern">Southern Cuisine</option>
+                                    <option class="options" value="bbq">BBQ cuisine</option>
+                                    <option class="options" value="japanese">Japanese Cuisine</option>
+                                    <option class="options" value="tai">Tai Cuisine</option>
+                                    <option class="options" value="indian">Indian Cuisine</option>
+                                </select>
                             </div>
                         </div>
                         <div class="control">
                             <label class="label">Do you like bars?</label>
-                            <div class="select">  
+                            <div class="select">
                                 <select id="bar-options">
                                     <option class="options" value="true">yes...DUH!!</option>
                                     <option class="options" value="false">No...not really my thing!</option>
