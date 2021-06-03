@@ -104,15 +104,40 @@ createCardsFromApi = (results) => {
 
 	var cardContent = document.createElement('div');
 		$(cardContent).addClass('card-content').appendTo(card)
+	
+	var resultIcon = document.createElement('img')
+		$(resultIcon).addClass('icon')
+		.attr('src', results[0].icon)
+		.attr('alt', 'result_Icon')
 
-	var cardTitle = document.createElement('p')
-		$(cardTitle).addClass('title')
-		.html(results[0].name);
+	var resultTitle = document.createElement('p')
+		$(resultTitle).addClass('title')
+		.html(' ' + results[0].name);
 
-	var cardDetail = document.createElement('p')
-		$(cardDetail).addClass('subtitle')
-		.html(results[0].vicinity);
-		cardContent.append(cardTitle, cardDetail)
+	var resultDetail = document.createElement('p')
+		$(resultDetail).addClass('subtitle')
+		.html(results[0].vicinity + '<br> Ratings: ' + results[0].rating);
+	
+	var priceLevel = document.createElement('p')
+		$(priceLevel).html("")
+		if (results[0].price_level == 0) {
+			$(priceLevel).html("Price Level: Free")
+		}
+		else if (results[0].price_level == 1) {
+			$(priceLevel).html("Price Level: Inexpensive")
+		}
+		else if (results[0].price_level == 2) {
+			$(priceLevel).html("Price Level: Moderate")
+		}
+		else if (results[0].price_level == 3) {
+			$(priceLevel).html("Price Level: Expensive")
+		}
+		else if (results[0].price_level == 4) {
+			$(priceLevel).html("Price Level: Very Expensive")
+		}
+
+	resultTitle.prepend(resultIcon)
+	cardContent.append(resultTitle, resultDetail, priceLevel)
 
 }
 

@@ -12,6 +12,10 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  .title {
+    padding-bottom: 15px;
+  }
   
   /*Hero-section*/
   .hero.has-background {
