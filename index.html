@@ -78,10 +78,6 @@
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
-                        <figure class="image is-64x64">
-                            <img src="assets/Images/Icon.png" alt="Logo">
-                        </figure>
-
                         <p class="modal-card-title">About you</p>
                         <button class="delete" aria-label="close"></button>
                     </header>
@@ -145,10 +141,12 @@
             <!--Results-->
             <section class="section is-medium">
                 <h1 class="title">Results</h1>
-                <div class="columns" id="results"></div>
+                <div id="cheers-img"></div>
+                    <div class="columns" id="results"></div>
+                
             </section>
             <!--Contact Us-->
-            <section class="section is-small is-0-mobile">
+            <section class="section is-small is-0-mobile" id="contact-us-section">
                 <h1 class="title">Contact Us</h1>
                 <div class="columns" id="contact-us">
                     <div class="column is-two-fifths">
@@ -162,7 +160,8 @@
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="hello@" id="contact-us-email">
+                                <input class="input" type="email" placeholder="Email input" value="hello@"
+                                    id="contact-us-email">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -176,9 +175,10 @@
                                 </label>
                                 <div class="control">
                                     <div class="select">
-                                        <select id="are-you-happy">
-                                            <option id="yes">Yes :)</option>
-                                            <option id="no">No :(</option>
+                                        <select>
+                                            <option>Select dropdown</option>
+                                            <option>Yes :)</option>
+                                            <option>No :(</option>
                                         </select>
                                     </div>
                                 </div>
@@ -187,13 +187,13 @@
                             <div class="field">
                                 <label class="label">Write Us A Message </label>
                                 <div class="control">
-                                    <textarea class="textarea" id="message" placeholder="Your Message!"></textarea>
+                                    <textarea class="textarea" placeholder="Your Message!"></textarea>
                                 </div>
                             </div>
 
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <button id="submitBtn" class="button is-link" >Submit</button>
+                                    <button id="submitBtn" class="button is-link">Submit</button>
                                 </div>
                                 <div class="control">
                                     <button id="cancelBtn" class="button is-link is-light" type="submit">Cancel</button>
@@ -206,6 +206,7 @@
                                 <img src="./assets/Images/Icon.png">
                             </div>
                         </div>
+
         </main>
         <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtM_oTP6sMahXfTnWC2GEM4Q8es01OrKQ&callback=initMap&libraries=places&v=weekly">
