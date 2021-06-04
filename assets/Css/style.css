@@ -1,57 +1,62 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Helvetica, Arial, sans-serif;
-  }
-  
-  .columns {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .title {
-    padding-bottom: 15px;
-  }
-  
-  /*Hero-section*/
-  .hero.has-background {
-    position: relative;
-    overflow: hidden;
-    background-image: url(/assets/Images/HeroImg.jpeg);
-  }
-  .hero-background {
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-    width: 100%;
-    height: 100%;
-  }
-  .hero-background.is-transparent {
-    opacity: 0.3;
-  }
-
- /* modal*/
-  .modal-card-head {
-    align-items: center;
-    background-color: rgb(150, 45, 45);
-    display: flex;
-    flex-shrink: 0;
-    justify-content: flex-start;
-    padding: 20px;
-    position: relative;
-    color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.columns {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.title {
+  padding-bottom: 15px;
+}
+
+/*Hero-section*/
+.hero.has-background {
+  position: relative;
+  overflow: hidden;
+  background-image: url(/assets/Images/HeroImg.jpeg);
+}
+
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background.is-transparent {
+  opacity: 0.3;
+}
+
+/* modal*/
+.modal-card-head {
+  align-items: center;
+  background-color: rgb(150, 45, 45);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  padding: 20px;
+  position: relative;
+  color: white;
+}
+
 .modal-card-foot {
-  background-color:rgb(150, 45, 45);
+  background-color: rgb(150, 45, 45);
 
 }
+
 .modal-card-body {
   background-color: rgb(224, 224, 224);
 }
+
 .modal-card-title {
   color: white;
   text-align: center;
@@ -82,30 +87,28 @@ a.navbar-item {
   left: 10%;
   object-fit: cover;
   object-position: center center;
-  
+
 }
- /*contact-us portion*/
- #contact-us-section{
-   position: absolute;
-   left: 30%;
- }
+
+/*contact-us portion*/
+#contact-us{
+  border-style: hidden;
+  background-color: rgb(224, 224, 224);
+}
 
 
 .box {
-   text-align: center;
-  }
+  text-align: center;
+}
 
-  .title {
-    text-align: center;
-  }
+.title {
+  text-align: center;
+}
 
- #ready-box {
-   font-size: 22px;
- }
-  
-  <!--Map Style-->
-  #map {
-    height: 100%;
-  }
+#ready-box {
+  font-size: 22px;
+}
 
-  
+<!--Map Style-->#map {
+  height: 100%;
+}
