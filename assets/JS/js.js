@@ -2,7 +2,7 @@ getModalInputInfo = () => {
 	//store input values into vraiables
 	var name = $('input[type="text"]').val();
 	var email = $('input[type="email"]').val();
-	var age = $('input[id="age"]').val();
+	var age = $('#age-checkbox').val();
 	var cuisineType = $('#cuisine-type').val();
 	var bars = $('#bar-options').val();
 	
@@ -195,66 +195,8 @@ saveContactUs = () => {
 
 }
 
-
-// class BulmaModal {
-
-// 	constructor(selector) {
-// 		this.elem = document.querySelector(selector)
-// 		this.close_data()
-// 	}
-	
-// 	const show() {
-// 		this.elem.classList.toggle('is-active')
-// 		this.on_show()
-// 	}
-	
-// 	close() {
-// 		this.elem.classList.toggle('is-active')
-// 		this.on_close()
-// 	}
-	
-// 	close_data() {
-// 		var modalClose = this.elem.querySelectorAll("[data-bulma-modal='close'], .modal-background")
-// 		var that = this
-// 		modalClose.forEach(function(e) {
-// 			e.addEventListener("click", function() {
-				
-// 				that.elem.classList.toggle('is-active')
-
-// 				$(".modal-close").click(function() {
-// 					$(".modal").removeClass("is-active");
-// 					})
-// 			})
-// 		})
-// 	}		
-	
-// 	addEventListener(event, callback) {
-// 	this.elem.addEventListener(event, callback)
-// 	}
-// }
-
-	
-// var btn = document.querySelector("#btn")
-// var mdl = new BulmaModal("#myModal")
-
-// btn.addEventListener("click", function () {
-// 	mdl.show()
-// })
-
-// mdl.addEventListener('modal:show', function() {
-// 	console.log("opened")
-// })
-
-// mdl.addEventListener("modal:close", function() {
-// 	console.log("closed")
-// })
-
 $('#save-changes').click(getModalInputInfo);
 $('#submitBtn').click(saveContactUs)
-	  
-// 	$(".modal-close").click(function() {
-//     $(".modal").removeClass("is-active");
-// 	})
 
 $("#showModal").click(function() {
 	$(".modal").addClass("is-active");  
