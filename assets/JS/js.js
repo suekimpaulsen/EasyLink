@@ -108,7 +108,7 @@ createCardsFromApi = (results) => {
 		$(card).addClass('card columns').appendTo(cardContainer)
 
 	var cardContent = document.createElement('div');
-		$(cardContent).addClass('card-content has-text-black').appendTo(card)
+		$(cardContent).addClass('card-content').appendTo(card)
 	
 	var resultIcon = document.createElement('img')
 		$(resultIcon).addClass('icon')
@@ -128,7 +128,7 @@ createCardsFromApi = (results) => {
 		.html('Ratings: ' + results[0].rating);
 	
 	var resultPhoto = document.createElement('img')
-		$(resultPhoto).attr('src', results[0].photos[0].getUrl())
+		$(resultPhoto).addClass('card-image').attr('src', results[0].photos[0].getUrl())
 		.attr('alt', 'result_Photo')
 		
 	var resultPriceLevel = document.createElement('p')
