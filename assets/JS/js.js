@@ -119,7 +119,7 @@ createCardsFromApi = (results) => {
 		.html(results[0].vicinity + '<br> Ratings: ' + results[0].rating);
 	
 	var priceLevel = document.createElement('p')
-		$(priceLevel).html("")
+		$(priceLevel).html("").addClass('subtitle price-level')
 		if (results[0].price_level == 0) {
 			$(priceLevel).html("Price Level: Free")
 		}
