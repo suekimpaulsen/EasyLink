@@ -3637,7 +3637,7 @@ a.tag:hover {
   display: block;
   position: relative;
   Width: 437px;
-  height: 585px;
+  height: auto;
  }
 
 .card-content {
