@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Hello Bulma!');
+});
 getModalInputInfo = () => {
 	//store input values into vraiables
 	var name = $('input[type="text"]').val();
@@ -54,7 +57,8 @@ var marker = [];
 initMap = (aboutYouInfo) => {
 	map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 36.1627, lng: -86.7816 },
-    zoom: 12,
+    zoom: 15,
+	mapId: "4e61ecbe9e376a4a"
   });
 
   	var aboutYouInfo = JSON.parse(localStorage.getItem('about-you'));
@@ -105,7 +109,7 @@ createCardsFromApi = (results) => {
 		$(card).addClass('card columns').appendTo(cardContainer)
 
 	var cardContent = document.createElement('div');
-		$(cardContent).addClass('card-content').appendTo(card)
+		$(cardContent).addClass('card-content has-text-black').appendTo(card)
 	
 	var resultIcon = document.createElement('img')
 		$(resultIcon).addClass('icon')
