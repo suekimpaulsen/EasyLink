@@ -53,7 +53,9 @@
     height: 50%;
   }
 
-
+.results {
+  justify-content: center
+}
   .result-address {
     padding-bottom: 10px;
     color: #575757;
@@ -3599,7 +3601,9 @@ a.tag:hover {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: white;
   max-width: 100%;
-  position: relative; }
+  position: relative; 
+  margin: 1.5rem;
+}
 
 .card-header {
   background-color: transparent;
@@ -3626,7 +3630,10 @@ a.tag:hover {
 
 .card-image {
   display: block;
-  position: relative; }
+  position: relative;
+  Width: 437px;
+  height: 585px;
+ }
 
 .card-content {
   background-color: transparent;
