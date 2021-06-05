@@ -104,35 +104,35 @@ createCardsFromApi = (results) => {
 	cardContainer.classList = 'card-container';
 	$('#results').append(cardContainer);
 				
-	var card = document.createElement('div');
+	const card = document.createElement('div');
 		$(card).addClass('card').appendTo(cardContainer)
 
-	var cardContent = document.createElement('div');
+	const cardContent = document.createElement('div');
 		$(cardContent).addClass('card-content').appendTo(card)
 	
-	var resultIcon = document.createElement('img')
+	const resultIcon = document.createElement('img')
 		$(resultIcon).addClass('icon')
 		.attr('src', results[0].icon)
 		.attr('alt', 'result_Icon')
 
-	var resultTitle = document.createElement('p')
-		$(resultTitle).addClass('title')
+	const resultTitle = document.createElement('p')
+		$(resultTitle).addClass('title result-title')
 		.html(' ' + results[0].name);
 
-	var resultAddress = document.createElement('p')
+	const resultAddress = document.createElement('p')
 		$(resultAddress).addClass('result-address')
 		.html(results[0].vicinity);
 	
-	var resultRating = document.createElement('p')
+	const resultRating = document.createElement('p')
 		$(resultRating).addClass('card-detail')
 		.html('Ratings: ' + results[0].rating);
 	
-	var resultPhoto = document.createElement('img')
+	const resultPhoto = document.createElement('img')
 		$(resultPhoto)
 		.attr('src', results[0].photos[0].getUrl())
 		.attr('alt', 'result_Photo')
 		
-	var resultPriceLevel = document.createElement('p')
+	const resultPriceLevel = document.createElement('p')
 		$(resultPriceLevel).html('').addClass('card-detail')
 		if (results[0].price_level == 0) {
 			$(resultPriceLevel).html('Price Level: Free')
