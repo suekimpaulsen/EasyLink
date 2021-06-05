@@ -99,8 +99,7 @@ createCardsFromApi = (results) => {
 	cardContainer = document.createElement('div');
 	cardContainer.classList = 'card-container';
 	$('#results').append(cardContainer);
-
-					
+				
 	var card = document.createElement('div');
 		$(card).addClass('card columns').appendTo(cardContainer)
 
@@ -116,30 +115,38 @@ createCardsFromApi = (results) => {
 		$(resultTitle).addClass('title')
 		.html(' ' + results[0].name);
 
-	var resultDetail = document.createElement('p')
-		$(resultDetail).addClass('subtitle')
-		.html(results[0].vicinity + '<br> Ratings: ' + results[0].rating);
+	var resultAddress = document.createElement('p')
+		$(resultAddress).addClass('result-address')
+		.html(results[0].vicinity);
 	
-	var priceLevel = document.createElement('p')
-		$(priceLevel).html("").addClass('subtitle price-level')
+	var resultRating = document.createElement('p')
+		$(resultRating).addClass('card-detail')
+		.html('Ratings: ' + results[0].rating);
+	
+	var resultPhoto = document.createElement('img')
+		$(resultPhoto).attr('src', results[0].photos[0].getUrl())
+		.attr('alt', 'result_Photo')
+		
+	var resultPriceLevel = document.createElement('p')
+		$(resultPriceLevel).html("").addClass('card-detail')
 		if (results[0].price_level == 0) {
-			$(priceLevel).html("Price Level: Free")
+			$(resultPriceLevel).html("Price Level: Free")
 		}
 		else if (results[0].price_level == 1) {
-			$(priceLevel).html("Price Level: Inexpensive")
+			$(resultPriceLevel).html("Price Level: Inexpensive")
 		}
 		else if (results[0].price_level == 2) {
-			$(priceLevel).html("Price Level: Moderate")
+			$(resultPriceLevel).html("Price Level: Moderate")
 		}
 		else if (results[0].price_level == 3) {
-			$(priceLevel).html("Price Level: Expensive")
+			$(resultPriceLevel).html("Price Level: Expensive")
 		}
 		else if (results[0].price_level == 4) {
-			$(priceLevel).html("Price Level: Very Expensive")
+			$(resultPriceLevel).html("Price Level: Very Expensive")
 		}
 
 	resultTitle.prepend(resultIcon)
-	cardContent.append(resultTitle, resultDetail, priceLevel)
+	cardContent.append(resultTitle, resultPhoto, resultAddress, resultRating, resultPriceLevel)
 
 }
 
