@@ -20,7 +20,20 @@ This app is to connect people with locations. Users can search the app to find l
 
 
 ## Features:
-1.  When the user clicks the pin on the map, it gives an info window with details including the name and the address of the place
+1. Google Map API & Place API was used
+### Example:
+```javascript
+map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 36.1627, lng: -86.7816 },
+    zoom: 15,
+	mapId: "4e61ecbe9e376a4a"
+  });
+```
+```javascript
+service = new google.maps.places.PlacesService(map);
+```
+
+2.  When the user clicks the pin on the map, it gives an info window with details including the name and the address of the place
 
 ### Before:
 ![map-popup-before](./assets/screenshots/map-popup-before.png)
@@ -39,7 +52,7 @@ google.maps.event.addListener(marker, 'click', (e) => {
 ```
 
 
-2. Card(s) will appear on the results section with the details of the restaurant or the bar
+3. Card(s) will appear on the results section with the details of the restaurant or the bar
 ### Example:
 ![results-section](./assets/screenshots/results-section.png)
 
