@@ -8,10 +8,16 @@ This app is to connect people with locations. Users can search the app to find l
 - See all the options in their area that they might not have known about
 
 ## How it works:
-1. 
+1. Click **get started**
+2. Enter name, and email address. Then select age, cuisine type and bar option from the dropdown.
+3. Click **Save changes** then click **Close** to get the results
+4. Map provides the pins of restaurants and bars based on the user choice
+5. 1 or 2 cards appears based on the user choice on the **Results** section
+6. Each card provides the name, a photo, the address, its rating, and price level of the restaurant or the bar
+7. The user can contact the developer for any feedback through **Contact Us** section
 
 ## Features:
-1. 
+1.  
 ### Example:
 
 2. 
