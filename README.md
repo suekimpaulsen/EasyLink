@@ -1,3 +1,29 @@
+# EasyLink
+
+This app is to connect people with locations. Users can search the app to find locations that match with their taste in food and drinks. Wheather you are new to town or need a new place to check out, this app will give the user the ability to find what fits their taste.
+
+## For the user who would like to:
+- Find new restaurants and bars in their area
+- Looking for good local bars and restaurants as a travelor or new to an area
+- See all the options in their area that they might not have known about
+
+## How it works:
+1. 
+
+## Features:
+1. 
+### Example:
+
+2. 
+### Example: 
+
+
+## Deployed URL
+
+
+
+
+
 # project-1
 
 Who is the Audience?
