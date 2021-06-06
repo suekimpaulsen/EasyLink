@@ -14,7 +14,7 @@ This app is to connect people with locations. Users can search the app to find l
 2. Enter name, and email address. Then select age, cuisine type and bar option from the dropdown.
 3. Click **Save changes** then click **Close** to get the results
 4. Map provides the pins of restaurants and bars based on the user choice
-5. 1 or 2 cards appears based on the user choice on the **Results** section
+5. 1 or 2 cards appear based on the user choice on the **Results** section
 6. Each card provides the name, a photo, the address, its rating, and price level of the restaurant or the bar
 7. The user can contact the developer for any feedback through **Contact Us** section
 
@@ -44,11 +44,11 @@ service = new google.maps.places.PlacesService(map);
 ### Example:
 ```javascript
 google.maps.event.addListener(marker, 'click', (e) => {
-		var placeDetail = "<b>" + place.name + "</b> <br/>" + place.vicinity;
-		infowindow.setContent(placeDetail);
-		infowindow.setPosition(e.latLng);
-    	infowindow.open(map);
-	});
+    var placeDetail = "<b>" + place.name + "</b> <br/>" + place.vicinity;
+    infowindow.setContent(placeDetail);
+    infowindow.setPosition(e.latLng);
+    infowindow.open(map);
+});
 ```
 
 
@@ -58,3 +58,4 @@ google.maps.event.addListener(marker, 'click', (e) => {
 
 
 ## Deployed URL
+https://ryanblessing.github.io/Group-project-1/
