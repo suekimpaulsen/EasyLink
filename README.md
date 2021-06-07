@@ -58,4 +58,4 @@ google.maps.event.addListener(marker, 'click', (e) => {
 
 
 ## Deployed URL
-https://ryanblessing.github.io/Group-project-1/
+https://suekimpaulsen.github.io/Group-project-1/
